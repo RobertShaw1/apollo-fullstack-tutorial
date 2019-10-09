@@ -1,7 +1,6 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
-import gql from 'graphql-tag';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ReactDOM from 'react-dom';
 import React from 'react';
@@ -15,7 +14,8 @@ const link = new HttpLink({
 
 const client = new ApolloClient({
   cache,
-  link
+  link,
+  connectToDevTools: true,
 })
 
 ReactDOM.render(
